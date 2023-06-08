@@ -1,9 +1,11 @@
 img {
     width: 300px
   }
-  mat-icon.is-favorite {
-    color: #e91e63;
+  mat-card-title {
+    font-weight: 450;
+    font-size: 18px;
   }
-  mat-icon.is-favorite:hover {
-    color: #fff;
+  
+  mat-card-subtitle .mat-subtitle-1{
+    font-size: 14px;
   }
