@@ -1,3 +1,9 @@
 img {
     width: 300px
   }
+  mat-icon.is-favorite {
+    color: #e91e63;
+  }
+  mat-icon.is-favorite:hover {
+    color: #fff;
+  }
