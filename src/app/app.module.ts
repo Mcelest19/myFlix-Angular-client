@@ -30,6 +30,13 @@ import { MatListModule } from '@angular/material/list';
 
 
 
+/**
+ * Routes
+ * @constant appRoutes
+ * Includes all routes used in the app
+ * welcome is the default
+ * the routes are: welcome, movies, profile
+ */
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },

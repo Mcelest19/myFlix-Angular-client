@@ -28,7 +28,9 @@ constructor(
 ngOnInit(): void {
 }
 
-// This is the function responsible for sending the form inputs to the backend
+  /**
+   * Sends the form inputs to the backend.
+   */
 registerUser(): void {
   this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
     this.dialogRef.close();

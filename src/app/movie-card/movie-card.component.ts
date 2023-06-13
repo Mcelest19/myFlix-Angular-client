@@ -25,6 +25,9 @@ export class MovieCardComponent {
     this.getMovies();    
   }
 
+  /**
+   * Calls the get movies method on the API.
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -32,7 +35,11 @@ export class MovieCardComponent {
       return this.movies;
     });
   }
-
+  /**
+   * Opens the genre dialog.
+   * @param name The genre's name to show on the dialog (title)
+   * @param description The genre's description to show on the dialog
+   */
   openGenre(name: string, description: string): void {
     this.dialog.open(GenreViewComponent, {
       data: {
@@ -42,7 +49,11 @@ export class MovieCardComponent {
       width: '280px'
     });
   }
-
+  /**
+   * Opens the director dialog.
+   * @param name The director's name to show on the dialog (title)
+   * @param bio The director's biography to show on the dialog
+  */
   openDirector(name: string, bio: string, birthday: string): void {
     this.dialog.open(DirectorViewComponent, {
       data: {
@@ -53,7 +64,10 @@ export class MovieCardComponent {
       //width: '280px'
     });
   }
-
+  /**
+   * Opens the movie description dialog.
+   * @param description The text to show on the dialog
+   */
   openSynopsis(title: string, description: string): void {
     this.dialog.open(SynopsisViewComponent, {
       data: {
@@ -63,7 +77,10 @@ export class MovieCardComponent {
       //width: '280px'
     });
   }
-
+  /**
+   * Calls the add favorite movie method on the API.
+   * @param id The movie ID
+   */
   addFavorite(id: string): void {
     this.fetchApiData.addFavoriteMovie(id).subscribe((result) => {
 
@@ -72,11 +89,17 @@ export class MovieCardComponent {
       });
     });
   }
-
+  /**
+  * Calls the check favorite movie method on the API.
+  * @param id The movie ID
+  */
   isFavorite(id: string): boolean {
     return this.fetchApiData.isFavoriteMovie(id);
   }
-
+  /**
+   * Calls the delete favorite movie method on the API.
+   * @param id The movie ID
+   */
   removeFavorite(id: string): void {
     this.fetchApiData.deleteFavoriteMovie(id).subscribe((result) => {
       this.snackBar.open('Movie removed from favorites.', 'OK', {
